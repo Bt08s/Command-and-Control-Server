@@ -71,7 +71,7 @@ with dpg.window(tag="Primary Window"):
     dpg.add_input_text(label="Data", tag="server data", multiline=True, default_value=':: Windows\n@echo off\necho "Hello World"\n\nor\n\n# Linux\n#!/bin/bash\necho "Hello World"')
     dpg.add_button(label="Send", callback=send_data, width=100)
 
-dpg.create_viewport(title='Command and Control Server', width=600, height=300)
+dpg.create_viewport(title='Command and Control Server by Bt08s', width=600, height=300)
 dpg.setup_dearpygui()
 dpg.show_viewport()
 dpg.set_primary_window("Primary Window", True)
