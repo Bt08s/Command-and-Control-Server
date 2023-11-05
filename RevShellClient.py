@@ -48,13 +48,13 @@ def execute_command(command):
     if platform.system() == "Windows":
         bat_file = "command.bat"
         with open(bat_file, 'w') as file:
-            file.write(command)
+            file.write(f"@echo off\n{command}")
         output = subprocess.check_output(bat_file, shell=True, text=True)
         os.remove(bat_file)
     else:
         sh_file = "command.sh"
         with open(sh_file, 'w') as file:
-            file.write("#!/bin/bash\n" + command)
+            file.write(f"#!/bin/bash\n{command}")
         os.chmod(sh_file, 0o755)
         output = subprocess.getoutput(f"./{sh_file}")
         os.remove(sh_file)
