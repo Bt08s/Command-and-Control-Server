@@ -1,1 +1,1 @@
-![image](https://github.com/Bt08s/Command-and-Control-Server/assets/68190921/74e44574-d5c9-4143-b89f-9c1fad33589e)
+![image](https://github.com/Bt08s/Command-and-Control-Server/assets/68190921/b1b6f461-1c05-4d6b-835f-0567515b0027)
