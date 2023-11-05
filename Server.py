@@ -68,7 +68,7 @@ with dpg.window(tag="Server window"):
     dpg.add_input_text(label="Port", tag="port", default_value="65535")
     dpg.add_button(label="Listen", callback=listen, width=100)
     dpg.add_text()
-    dpg.add_input_text(label="Data", tag="server data", multiline=True, default_value=':: Windows\n@echo off\necho "Hello World"\n\nor\n\n# Linux\n#!/bin/bash\necho "Hello World"')
+    dpg.add_input_text(label="Data", tag="server data", multiline=True, default_value=':: Windows\necho "Hello World"\n\nor\n\n# Linux\necho "Hello World"')
     dpg.add_button(label="Send", callback=send_data, width=100)
 
 dpg.create_viewport(title='Command and control Server by Bt08s', width=600, height=300)
