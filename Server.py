@@ -79,6 +79,8 @@ with dpg.window(tag="Server window"):
     dpg.add_input_text(label="Data", tag="server data", multiline=True,
                        default_value=':: Windows\necho "Hello World"\n\nor\n\n# Linux\necho "Hello World"')
     dpg.add_button(label="Send", callback=send_data, width=100)
+    with dpg.tooltip(dpg.last_item()):
+        dpg.add_text("Send data to all clients in connection")
 
 with dpg.theme() as global_theme:
     with dpg.theme_component(dpg.mvAll):
