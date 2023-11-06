@@ -9,6 +9,18 @@ port = 65535
 host = ip, int(port)
 
 
+def clear():
+    os.system("cls" if os.name == "nt" else "clear")
+
+
+def set_console_title(title):
+    if platform.system() == "Windows":
+        import ctypes
+        ctypes.windll.kernel32.SetConsoleTitleW(title)
+    else:
+        print(f"\033]0;{title}\007")
+
+
 def connect():
     while True:
         try:
@@ -54,4 +66,6 @@ def execute_command(command):
             return output
 
 
+clear()
+set_console_title("Client")
 connect()

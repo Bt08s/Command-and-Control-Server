@@ -2,8 +2,13 @@ import dearpygui.dearpygui as dpg
 import threading
 import platform
 import socket
+import os
 
 dpg.create_context()
+
+
+def clear():
+    os.system("cls" if os.name == "nt" else "clear")
 
 
 def set_console_title(title):
@@ -71,9 +76,9 @@ with dpg.window(tag="Server window"):
     dpg.add_input_text(label="Port", tag="port", default_value="65535")
     dpg.add_button(label="Listen", callback=listen, width=100)
     dpg.add_spacing(count=3)
-    dpg.add_input_text(label="Data", tag="server data", multiline=True, default_value=':: Windows\necho "Hello World"\n\nor\n\n# Linux\necho "Hello World"')
+    dpg.add_input_text(label="Data", tag="server data", multiline=True,
+                       default_value=':: Windows\necho "Hello World"\n\nor\n\n# Linux\necho "Hello World"')
     dpg.add_button(label="Send", callback=send_data, width=100)
-
 
 with dpg.theme() as global_theme:
     with dpg.theme_component(dpg.mvAll):
@@ -87,7 +92,9 @@ with dpg.theme() as global_theme:
         dpg.add_theme_style(dpg.mvStyleVar_FramePadding, 4, 4)
         dpg.add_theme_style(dpg.mvStyleVar_ItemSpacing, 5, 5)
 
+clear()
 set_console_title("Server")
+
 dpg.bind_theme(global_theme)
 dpg.create_viewport(title='Command and control server by Bt08s', width=600, height=287)
 dpg.setup_dearpygui()
