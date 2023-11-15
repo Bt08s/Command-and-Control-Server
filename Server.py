@@ -75,7 +75,7 @@ with dpg.window(tag="Server window"):
     dpg.add_input_text(label="IP", tag="ip", default_value="127.0.0.1")
     dpg.add_input_text(label="Port", tag="port", default_value="65535")
     dpg.add_button(label="Listen", callback=listen, width=100)
-    dpg.add_spacing(count=3)
+    dpg.add_spacer(parent=3)
     dpg.add_input_text(label="Data", tag="server data", multiline=True,
                        default_value=':: Windows\necho "Hello World"\n\nor\n\n# Linux\necho "Hello World"')
     dpg.add_button(label="Send", callback=send_data, width=100)
