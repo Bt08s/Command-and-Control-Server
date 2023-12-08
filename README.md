@@ -5,4 +5,4 @@
 ![image](https://github.com/Bt08s/Command-and-Control-Server/assets/68190921/20a96fc4-18da-4433-865b-38f16175e832)
 
 # Issue
-* Even if the client's computer wakes up from sleep mode, the connection cannot be established again.
+* Even if the client's computer wakes up from sleep mode, the connection cannot be established again until computer gets restarted.
