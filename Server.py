@@ -74,25 +74,30 @@ def send_data():
 with dpg.window(tag="Server window"):
     dpg.add_input_text(label="IP", tag="ip", default_value="127.0.0.1")
     dpg.add_input_text(label="Port", tag="port", default_value="65535")
-    dpg.add_button(label="Listen", callback=listen, width=100)
+    dpg.add_button(label="Listen", callback=listen, width=75)
     dpg.add_spacer(parent=3)
     dpg.add_input_text(label="Data", tag="server data", multiline=True,
                        default_value=':: Windows\necho "Hello World"\n\nor\n\n# Linux\necho "Hello World"')
-    dpg.add_button(label="Send", callback=send_data, width=100)
+    dpg.add_button(label="Send", callback=send_data, width=75)
     with dpg.tooltip(dpg.last_item()):
         dpg.add_text("Send data to all clients in connection")
 
 with dpg.theme() as global_theme:
     with dpg.theme_component(dpg.mvAll):
-        dpg.add_theme_style(dpg.mvStyleVar_WindowRounding, 3)
-        dpg.add_theme_style(dpg.mvStyleVar_FrameRounding, 3)
-        dpg.add_theme_style(dpg.mvStyleVar_GrabRounding, 3)
-        dpg.add_theme_style(dpg.mvStyleVar_TabRounding, 3)
-        dpg.add_theme_style(dpg.mvStyleVar_ChildRounding, 3)
-        dpg.add_theme_style(dpg.mvStyleVar_PopupRounding, 3)
-        dpg.add_theme_style(dpg.mvStyleVar_ScrollbarRounding, 3)
-        dpg.add_theme_style(dpg.mvStyleVar_FramePadding, 4, 4)
+        dpg.add_theme_style(dpg.mvStyleVar_WindowRounding, 5)
+        dpg.add_theme_style(dpg.mvStyleVar_FrameRounding, 5)
+        dpg.add_theme_style(dpg.mvStyleVar_GrabRounding, 5)
+        dpg.add_theme_style(dpg.mvStyleVar_TabRounding, 5)
+        dpg.add_theme_style(dpg.mvStyleVar_ChildRounding, 5)
+        dpg.add_theme_style(dpg.mvStyleVar_PopupRounding, 5)
+        dpg.add_theme_style(dpg.mvStyleVar_ScrollbarRounding, 5)
+        dpg.add_theme_style(dpg.mvStyleVar_FramePadding, 5, 5)
         dpg.add_theme_style(dpg.mvStyleVar_ItemSpacing, 5, 5)
+
+        dpg.add_theme_color(dpg.mvThemeCol_WindowBg, (21, 22, 23))
+        dpg.add_theme_color(dpg.mvThemeCol_FrameBg, (32, 50, 77))
+        dpg.add_theme_color(dpg.mvThemeCol_Button, (39, 73, 114))
+        dpg.add_theme_color(dpg.mvThemeCol_FrameBg, (32, 50, 77))
 
 clear()
 set_console_title("Server")
