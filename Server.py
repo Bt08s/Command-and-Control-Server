@@ -4,8 +4,6 @@ import platform
 import socket
 import os
 
-dpg.create_context()
-
 
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
